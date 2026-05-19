@@ -1,0 +1,215 @@
+:root {
+  --accent: #5eead4;
+  --accent-glow: #99f6e4;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Combined background layers (radial glow + grid) */
+.bg-layers {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background-image:
+    radial-gradient(ellipse at top, rgba(94, 234, 212, 0.08), transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+}
+
+/* ---------- Hero stat cards ---------- */
+.card-stat {
+  padding: 1.25rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 18, 24, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card-stat:hover {
+  transform: translateY(-2px);
+  border-color: rgba(94, 234, 212, 0.3);
+}
+
+/* ---------- Experience ---------- */
+.exp-item {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(94, 234, 212, 0.15);
+  transition: border-color 0.2s;
+}
+
+.exp-item:hover {
+  border-left-color: rgba(94, 234, 212, 0.5);
+}
+
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(94, 234, 212, 0.6);
+}
+
+.exp-project {
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  background: rgba(15, 18, 24, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.exp-project:hover {
+  background: rgba(15, 18, 24, 0.7);
+  border-color: rgba(94, 234, 212, 0.2);
+}
+
+.exp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.exp-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.exp-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+/* ---------- Projects ---------- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 18, 24, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(94, 234, 212, 0.3);
+  background: rgba(15, 18, 24, 0.8);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(94, 234, 212, 0.08);
+  color: var(--accent-glow);
+  border: 1px solid rgba(94, 234, 212, 0.15);
+}
+
+/* ---------- Skills ---------- */
+.skill-card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 18, 24, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.skill-grid dt {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #71717a;
+  padding-top: 2px;
+}
+
+.skill-grid dd {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #d4d4d8;
+  line-height: 1.5;
+}
+
+/* ---------- Fade-in animation ---------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.05s; }
+.fade-in:nth-child(2) { animation-delay: 0.15s; }
+.fade-in:nth-child(3) { animation-delay: 0.25s; }
+.fade-in:nth-child(4) { animation-delay: 0.35s; }
+.fade-in:nth-child(5) { animation-delay: 0.45s; }
+.fade-in:nth-child(6) { animation-delay: 0.55s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll-triggered fade for sections */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0c10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a3142;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ---------- Smooth scrolling ---------- */
+html {
+  scroll-behavior: smooth;
+}

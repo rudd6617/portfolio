@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rudolf Chen | Senior Backend Engineer</title>
+  <meta name="description" content="陳麒方 Rudolf Chen — Senior Backend Engineer with 10 years of experience. Python, distributed systems, RAG / LLM integration." />
+  <meta name="author" content="Rudolf Chen" />
+
+  <meta property="og:title" content="Rudolf Chen | Senior Backend Engineer" />
+  <meta property="og:description" content="10 年後端開發經驗，專注 Python、分散式系統、AI/RAG 整合。" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans TC', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+          colors: {
+            ink: {
+              900: '#0a0c10',
+              800: '#0f1218',
+              700: '#161a22',
+              600: '#1d2230',
+              500: '#2a3142',
+            },
+            accent: {
+              DEFAULT: '#5eead4',
+              dim: '#2dd4bf',
+              glow: '#99f6e4',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body class="bg-ink-900 text-zinc-200 font-sans antialiased selection:bg-accent/30 selection:text-accent-glow">
+
+  <div class="bg-layers" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-ink-900/70 border-b border-white/5">
+    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="#top" class="font-mono text-sm text-accent hover:text-accent-glow transition">rudolf.chen()</a>
+      <div class="hidden sm:flex items-center gap-6 text-sm text-zinc-400">
+        <a href="#about" class="hover:text-accent transition">About</a>
+        <a href="#experience" class="hover:text-accent transition">Experience</a>
+        <a href="#projects" class="hover:text-accent transition">Projects</a>
+        <a href="#skills" class="hover:text-accent transition">Skills</a>
+        <a href="#contact" class="hover:text-accent transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top" class="max-w-5xl mx-auto px-6 pt-32 pb-24">
+
+    <!-- Hero -->
+    <section class="mb-32">
+      <p class="font-mono text-sm text-accent mb-4 fade-in">$ whoami</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-3 fade-in break-words">
+        陳麒方 <span class="text-zinc-500">/</span> Rudolf Chen
+      </h1>
+      <p class="text-xl sm:text-2xl text-zinc-400 mb-8 fade-in">
+        Senior Backend Engineer
+      </p>
+      <div class="flex flex-wrap gap-2 mb-8 fade-in">
+        <span class="px-3 py-1 text-xs font-mono rounded-full bg-accent/10 text-accent border border-accent/20">#ProblemSolver</span>
+        <span class="px-3 py-1 text-xs font-mono rounded-full bg-accent/10 text-accent border border-accent/20">#Restlessness</span>
+      </div>
+      <p class="text-lg text-zinc-300 leading-relaxed max-w-3xl fade-in">
+        具備 <strong class="text-accent">10 年後端開發經驗</strong>，專注 Python 與分散式系統設計，熟悉高併發架構與系統穩定性優化，並具備 legacy 系統現代化與 AI 系統整合經驗。曾支撐萬人級直播平台，近期投入 RAG 與 AI Agent 應用，將 LLM 技術導入後端系統中。
+      </p>
+
+      <!-- Quick stats -->
+      <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 fade-in">
+        <div class="card-stat">
+          <div class="text-3xl font-bold text-accent">10+</div>
+          <div class="text-xs text-zinc-500 mt-1">Years backend</div>
+        </div>
+        <div class="card-stat">
+          <div class="text-3xl font-bold text-accent">10k+</div>
+          <div class="text-xs text-zinc-500 mt-1">Peak concurrent users</div>
+        </div>
+        <div class="card-stat">
+          <div class="text-3xl font-bold text-accent">15x</div>
+          <div class="text-xs text-zinc-500 mt-1">API latency improvement</div>
+        </div>
+        <div class="card-stat">
+          <div class="text-3xl font-bold text-accent">80%+</div>
+          <div class="text-xs text-zinc-500 mt-1">Test coverage</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="mb-32 scroll-mt-24">
+      <h2 class="flex items-center text-3xl font-bold tracking-tight text-zinc-100 mb-10 pb-4 border-b border-white/5">
+        <span class="font-mono text-accent text-sm mr-3">01.</span>
+        About
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-8 reveal">
+        <div class="sm:col-span-2 space-y-4 text-zinc-300 leading-relaxed">
+          <p>
+            從 PHP 4 升級到 Python FastAPI、從飯店 ERP 到萬人直播平台、從 legacy 重構到 RAG / LLM 整合 — 過去十年我在不同規模、不同 stack 的系統裡反覆驗證一件事：<strong class="text-zinc-100">好的數據結構比聰明的代碼重要</strong>。
+          </p>
+          <p>
+            目前在 <strong class="text-accent">準訊生醫</strong> 主導報告管理系統與 AI 整合，同時自架 Proxmox 生產環境、導入 Claude Code 協作流程。近期專注將 LLM 技術從 Demo 推進到生產可用的後端系統。
+          </p>
+        </div>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-baseline gap-3">
+            <span class="font-mono text-accent shrink-0">→</span>
+            <span class="text-zinc-300">Python · FastAPI · Django</span>
+          </div>
+          <div class="flex items-baseline gap-3">
+            <span class="font-mono text-accent shrink-0">→</span>
+            <span class="text-zinc-300">分散式系統 · 高併發架構</span>
+          </div>
+          <div class="flex items-baseline gap-3">
+            <span class="font-mono text-accent shrink-0">→</span>
+            <span class="text-zinc-300">RAG · LLM Application</span>
+          </div>
+          <div class="flex items-baseline gap-3">
+            <span class="font-mono text-accent shrink-0">→</span>
+            <span class="text-zinc-300">Docker · CI/CD · 可觀測性</span>
+          </div>
+          <div class="flex items-baseline gap-3">
+            <span class="font-mono text-accent shrink-0">→</span>
+            <span class="text-zinc-300">Legacy 系統現代化</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="mb-32 scroll-mt-24">
+      <h2 class="flex items-center text-3xl font-bold tracking-tight text-zinc-100 mb-10 pb-4 border-b border-white/5">
+        <span class="font-mono text-accent text-sm mr-3">02.</span>
+        Experience
+      </h2>
+
+      <div class="space-y-12">
+
+        <!-- Job 1: 準訊生醫 -->
+        <article class="exp-item reveal">
+          <header class="mb-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+              <h3 class="text-xl font-semibold text-zinc-100">
+                Software Engineer · <span class="text-accent">準訊生醫股份有限公司</span>
+              </h3>
+              <span class="font-mono text-xs text-zinc-500">May 2024 – Present</span>
+            </div>
+          </header>
+
+          <div class="space-y-6">
+            <div class="exp-project">
+              <h4 class="text-base font-semibold text-zinc-100 mb-1">線上編修報告管理系統</h4>
+              <p class="font-mono text-xs text-accent mb-3">FastAPI · SQLAlchemy · React · MySQL · Redis · MinIO · Docker</p>
+              <ul class="exp-list">
+                <li>主導資料整合架構設計，三層分離透過介面抽象隔離資料存取與外部依賴，使核心業務邏輯可獨立測試並支援多資料來源替換</li>
+                <li>建立 Unit Test 策略（覆蓋率 <strong class="text-accent">80%+</strong>）與 PR 驅動 Code Review 流程，確保長期可維護性</li>
+                <li>整合 MinIO 處理非結構化資料，服務 <strong class="text-accent">20 家客戶</strong>，將報告生成效率提升 <strong class="text-accent">60%</strong>，人工處理時間由 72 分鐘降至 25 分鐘</li>
+                <li>自建 Proxmox VE 生產環境（6 台 VM/Container），涵蓋 Docker、CI/CD、監控與備份，具備完整 infra 落地能力（可平移至 Azure）</li>
+                <li>導入 AI 協作開發流程（Claude Code），提升開發效率並建立團隊 AI 工程實踐</li>
+              </ul>
+            </div>
+
+            <div class="exp-project">
+              <h4 class="text-base font-semibold text-zinc-100 mb-1">即時醫療服務管理系統</h4>
+              <p class="font-mono text-xs text-accent mb-3">Django · Laravel · React · WebSocket · MySQL · Redis · Docker</p>
+              <ul class="exp-list">
+                <li>建立 WebSocket 即時通訊架構，處理醫療設備連線與生理訊號傳輸</li>
+                <li>開發 ECG 心電圖即時繪製與判讀系統，日均處理 <strong class="text-accent">1,000 筆訊號</strong></li>
+                <li>將複雜訊號處理流程抽象為產品規格文件，提升跨團隊溝通效率與決策速度</li>
+              </ul>
+            </div>
+
+            <div class="exp-project">
+              <h4 class="text-base font-semibold text-zinc-100 mb-1">內部資料統合分析系統</h4>
+              <p class="font-mono text-xs text-accent mb-3">Django · Laravel · React · MySQL · Docker</p>
+              <ul class="exp-list">
+                <li>主導資料整合架構設計，串接 ERP 與多個異質系統 API</li>
+                <li>採 Adapter Pattern 封裝資料來源差異並建立統一 Domain Model，降低系統耦合度</li>
+                <li>建立多維度分析儀表板與匯出功能，減少 <strong class="text-accent">90% 人工資料整理成本</strong></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job 2: 奇異科技 -->
+        <article class="exp-item reveal">
+          <header class="mb-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+              <h3 class="text-xl font-semibold text-zinc-100">
+                Software Engineer · <span class="text-accent">奇異科技資訊有限公司</span>
+              </h3>
+              <span class="font-mono text-xs text-zinc-500">May 2021 – April 2024 · 3 yrs</span>
+            </div>
+          </header>
+
+          <div class="space-y-6">
+            <div class="exp-project">
+              <h4 class="text-base font-semibold text-zinc-100 mb-1">體育賽事直播平台</h4>
+              <p class="font-mono text-xs text-accent mb-3">PHP · MySQL · Redis · Alibaba Cloud · Docker · Zabbix · ELK · JMeter</p>
+              <ul class="exp-list">
+                <li>參與高併發系統架構與直播流服務整合，支援國際大型賽事（世足賽、NBA 季後賽），尖峰承載 <strong class="text-accent">10,000+ 同時在線</strong>，確保直播流穩定不中斷</li>
+                <li>建立並維運可觀測性體系（Zabbix 監控 + ELK log 分析 + JMeter 壓測），驗證系統可承受 <strong class="text-accent">10 倍尖峰流量</strong>，提升系統穩定性與可預測性</li>
+                <li>參與資料庫效能優化（索引設計、slow query 分析），將 API 平均回應時間優化 <strong class="text-accent">15 倍</strong></li>
+              </ul>
+            </div>
+
+            <div class="exp-project">
+              <h4 class="text-base font-semibold text-zinc-100 mb-1">開獎資訊聚合平台</h4>
+              <p class="font-mono text-xs text-accent mb-3">PHP · MySQL · Redis</p>
+              <ul class="exp-list">
+                <li>開發多來源資料聚合系統，串接並爬取 <strong class="text-accent">50+ 彩券資料來源</strong></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Job 3: 同康科技 -->
+        <article class="exp-item reveal">
+          <header class="mb-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+              <h3 class="text-xl font-semibold text-zinc-100">
+                Software Engineer · <span class="text-accent">同康科技股份有限公司</span>
+              </h3>
+              <span class="font-mono text-xs text-zinc-500">April 2017 – May 2021 · 4 yrs</span>
+            </div>
+          </header>
+
+          <div class="space-y-6">
+            <div class="exp-project">
+              <h4 class="text-base font-semibold text-zinc-100 mb-1">飯店管理系統 / ERP</h4>
+              <p class="font-mono text-xs text-accent mb-3">PHP · MySQL</p>
+              <ul class="exp-list">
+                <li>主導 PHP 4 → 7 跨代升級遷移，解決 <strong class="text-accent">100+ 相容性問題</strong>，完成 <strong class="text-accent">20+ 飯店客戶零停機切換</strong></li>
+                <li>全程參與 ERP 系統分析、設計與開發，涵蓋人資、總帳、進銷存等核心模組</li>
+              </ul>
+            </div>
+
+            <div class="exp-project">
+              <h4 class="text-base font-semibold text-zinc-100 mb-1">連鎖飯店 / 民宿管理系統</h4>
+              <p class="font-mono text-xs text-accent mb-3">PHP · MySQL · SOAP · API</p>
+              <ul class="exp-list">
+                <li>主導開發多據點飯店與民宿管理系統（<strong class="text-accent">20 間連鎖飯店 + 120 家民宿</strong>）</li>
+                <li>整合 OTA 平台（SiteMinder, SOAP API），自動化房價與庫存同步流程，將人工更新作業減少 <strong class="text-accent">90%</strong>，提升營運效率並降低人為錯誤</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="mb-32 scroll-mt-24">
+      <h2 class="flex items-center text-3xl font-bold tracking-tight text-zinc-100 mb-10 pb-4 border-b border-white/5">
+        <span class="font-mono text-accent text-sm mr-3">03.</span>
+        Projects
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <article class="project-card reveal">
+          <div class="flex items-start justify-between mb-4">
+            <svg class="text-accent" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span class="font-mono text-xs text-zinc-500">Personal</span>
+          </div>
+          <h3 class="text-lg font-semibold text-zinc-100 mb-2">Forja CV</h3>
+          <p class="text-sm text-zinc-400 mb-4">履歷編輯器與 JD 分析工具</p>
+          <ul class="space-y-2 text-sm text-zinc-300 mb-5">
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>本地 LLM（vLLM / oMLX）進行職缺與履歷差距分析，生成改寫建議</span></li>
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>Cloudflare Workers + D1 全端 edge 架構</span></li>
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>整合 LLM inference pipeline 實作語意差異分析</span></li>
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>GitHub Actions → Cloudflare Pages 自動化部署</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="tag">TypeScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Cloudflare Workers</span>
+            <span class="tag">D1</span>
+            <span class="tag">oMLX</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="flex items-start justify-between mb-4">
+            <svg class="text-accent" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span class="font-mono text-xs text-zinc-500">Work</span>
+          </div>
+          <h3 class="text-lg font-semibold text-zinc-100 mb-2">醫療法規 QMS 查詢助手</h3>
+          <p class="text-sm text-zinc-400 mb-4">RAG 智慧文件查詢系統</p>
+          <ul class="space-y-2 text-sm text-zinc-300 mb-5">
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>導入 RAG 架構提升醫療 QMS 文件知識檢索效率</span></li>
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>地端部署 vLLM，確保醫療資料隱私與法規合規性</span></li>
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>整合 Qdrant 向量資料庫，實作 retrieval + generation pipeline</span></li>
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>AI Agent orchestration 串接內部知識庫與服務 API</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="tag">Python</span>
+            <span class="tag">Qdrant</span>
+            <span class="tag">vLLM</span>
+            <span class="tag">RAG</span>
+            <span class="tag">AI Agent</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="mb-32 scroll-mt-24">
+      <h2 class="flex items-center text-3xl font-bold tracking-tight text-zinc-100 mb-10 pb-4 border-b border-white/5">
+        <span class="font-mono text-accent text-sm mr-3">04.</span>
+        Skills
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="skill-card reveal">
+          <h3 class="skill-title">後端與架構</h3>
+          <dl class="skill-grid">
+            <dt>語言</dt><dd>Python (FastAPI / Django) · PHP (Laravel) · TypeScript</dd>
+            <dt>ORM / DB</dt><dd>SQLAlchemy · Django ORM · MySQL · Redis · MinIO</dd>
+            <dt>架構</dt><dd>分層架構 · Adapter Pattern · 微服務拆分</dd>
+            <dt>API</dt><dd>RESTful · WebSocket · SOAP</dd>
+            <dt>大規模</dt><dd>高併發設計 · 讀寫分離 · 效能優化 · 快取策略</dd>
+          </dl>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-title">雲端與 DevOps</h3>
+          <dl class="skill-grid">
+            <dt>容器</dt><dd>Docker · Docker Compose</dd>
+            <dt>雲端</dt><dd>Alibaba Cloud · Proxmox VE 自架 Production</dd>
+            <dt>CI/CD</dt><dd>GitHub Actions</dd>
+            <dt>可觀測性</dt><dd>Zabbix · ELK Stack · JMeter</dd>
+          </dl>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-title">AI 編程與 LLM 應用</h3>
+          <dl class="skill-grid">
+            <dt>AI 工具</dt><dd>Claude Code 重度使用者 · AI 協作開發流程</dd>
+            <dt>LLM</dt><dd>Google Gemini API · Pydantic 結構化輸出</dd>
+            <dt>RAG</dt><dd>Qdrant 向量庫 · 地端 vLLM · 整合層自實作</dd>
+          </dl>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-title">工程素養與測試</h3>
+          <dl class="skill-grid">
+            <dt>測試</dt><dd>Unit Test (80%+) · Code Review · PR 驅動協作</dd>
+            <dt>代碼品質</dt><dd>Clean Code · 重構 · 可讀性與可維護性</dd>
+            <dt>協作</dt><dd>跨團隊溝通 · 技術轉譯給 PM / 設計團隊</dd>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="mb-32 scroll-mt-24">
+      <h2 class="flex items-center text-3xl font-bold tracking-tight text-zinc-100 mb-10 pb-4 border-b border-white/5">
+        <span class="font-mono text-accent text-sm mr-3">05.</span>
+        Education
+      </h2>
+      <div class="exp-item">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+          <h3 class="text-xl font-semibold text-zinc-100">國立金門大學</h3>
+          <span class="font-mono text-xs text-zinc-500">2011/9 – 2015/6</span>
+        </div>
+        <p class="text-zinc-400">資訊工程學系 · Kinmen, Taiwan</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="scroll-mt-24">
+      <h2 class="flex items-center text-3xl font-bold tracking-tight text-zinc-100 mb-10 pb-4 border-b border-white/5">
+        <span class="font-mono text-accent text-sm mr-3">06.</span>
+        Contact
+      </h2>
+      <div class="text-center py-12 reveal">
+        <p class="text-2xl sm:text-3xl font-bold text-zinc-100 mb-3">想聊聊？</p>
+        <p class="text-zinc-400 mb-8 max-w-md mx-auto">
+          目前對後端架構、AI/RAG 整合、Legacy 系統現代化等職缺感興趣。
+        </p>
+        <a href="mailto:rudd6617@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-ink-900 font-semibold hover:bg-accent-glow transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          rudd6617@gmail.com
+        </a>
+
+        <div class="mt-10 flex items-center justify-center gap-6 text-sm text-zinc-500">
+          <a href="https://github.com/rudd6617/" target="_blank" rel="noopener" class="hover:text-accent transition inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            github.com/rudd6617
+          </a>
+          <span class="text-zinc-700">·</span>
+          <span>Taipei, Taiwan</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/5 py-8 text-center text-xs text-zinc-600 font-mono">
+    <p>Built with HTML · Tailwind · vanilla JS</p>
+    <p class="mt-1">© 2026 Rudolf Chen</p>
+  </footer>
+
+  <script src="./assets/main.js"></script>
+</body>
+</html>
