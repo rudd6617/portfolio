@@ -4,7 +4,8 @@
   "private": true,
   "description": "Rudolf Chen portfolio site",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --minify"
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"

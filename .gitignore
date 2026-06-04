@@ -18,3 +18,7 @@ resume_*.json
 node_modules/
 dist/
 .cache/
+
+# Build output (compiled by CI; run `npm run build:css` for local preview)
+assets/tailwind.css
+_site/
