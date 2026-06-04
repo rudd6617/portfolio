@@ -17,10 +17,12 @@ module.exports = {
           600: '#1d2230',
           500: '#2a3142',
         },
+        // Single-sourced in assets/style.css :root as RGB channels; referenced
+        // here so opacity utilities (bg-accent/10, selection:bg-accent/30) work.
         accent: {
-          DEFAULT: '#5eead4',
-          dim: '#2dd4bf',
-          glow: '#99f6e4',
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          dim: 'rgb(var(--accent-dim) / <alpha-value>)',
+          glow: 'rgb(var(--accent-glow) / <alpha-value>)',
         },
       },
     },

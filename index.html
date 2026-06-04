@@ -295,7 +295,12 @@
             <svg class="text-accent" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             <span class="font-mono text-xs text-zinc-500">Personal</span>
           </div>
-          <h3 class="text-lg font-semibold text-zinc-100 mb-2">Forja CV</h3>
+          <h3 class="text-lg font-semibold text-zinc-100 mb-2">
+            <a href="https://forjacv.rudd6617.workers.dev/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-accent transition">
+              Forja CV
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </h3>
           <p class="text-sm text-zinc-400 mb-4">履歷編輯器與 JD 分析工具</p>
           <ul class="space-y-2 text-sm text-zinc-300 mb-5">
             <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>本地 LLM（vLLM / oMLX）進行職缺與履歷差距分析，生成改寫建議</span></li>
@@ -332,6 +337,33 @@
             <span class="tag">vLLM</span>
             <span class="tag">RAG</span>
             <span class="tag">AI Agent</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="flex items-start justify-between mb-4">
+            <svg class="text-accent" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg>
+            <span class="font-mono text-xs text-zinc-500">公益</span>
+          </div>
+          <h3 class="text-lg font-semibold text-zinc-100 mb-2">
+            <a href="https://www.truheart.com.tw" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-accent transition">
+              初心公益
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </h3>
+          <p class="text-sm text-zinc-400 mb-4">公益募資平台</p>
+          <ul class="space-y-2 text-sm text-zinc-300 mb-5">
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>接手前人雛形，獨力完成前後端開發並推進至正式上線</span></li>
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>五大議題（婦女／兒少／長者／環境／動物）募資平台，含會員系統、捐款紀錄與專案收藏</span></li>
+            <li class="flex gap-2"><span class="text-accent shrink-0">▸</span><span>整合 NPO 合作申請流程與 LINE 線上客服</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">Go</span>
+            <span class="tag">go-zero</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">AWS</span>
           </div>
         </article>
 
@@ -389,31 +421,16 @@
       </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="mb-32 scroll-mt-24">
-      <h2 class="flex items-center text-3xl font-bold tracking-tight text-zinc-100 mb-10 pb-4 border-b border-white/5">
-        <span class="font-mono text-accent text-sm mr-3">05.</span>
-        Education
-      </h2>
-      <div class="exp-item">
-        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-          <h3 class="text-xl font-semibold text-zinc-100">國立金門大學</h3>
-          <span class="font-mono text-xs text-zinc-500">2011/9 – 2015/6</span>
-        </div>
-        <p class="text-zinc-400">資訊工程學系 · Kinmen, Taiwan</p>
-      </div>
-    </section>
-
     <!-- Contact -->
     <section id="contact" class="scroll-mt-24">
       <h2 class="flex items-center text-3xl font-bold tracking-tight text-zinc-100 mb-10 pb-4 border-b border-white/5">
-        <span class="font-mono text-accent text-sm mr-3">06.</span>
+        <span class="font-mono text-accent text-sm mr-3">05.</span>
         Contact
       </h2>
       <div class="text-center py-12 reveal">
-        <p class="text-2xl sm:text-3xl font-bold text-zinc-100 mb-3">想聊聊？</p>
+        <p class="text-2xl sm:text-3xl font-bold text-zinc-100 mb-3">歡迎聯絡</p>
         <p class="text-zinc-400 mb-8 max-w-md mx-auto">
-          目前對後端架構、AI/RAG 整合、Legacy 系統現代化等職缺感興趣。
+          目前正在尋找後端架構、AI/RAG 整合與 Legacy 系統現代化相關的機會，歡迎來信交流。
         </p>
         <a href="mailto:rudd6617@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-ink-900 font-semibold hover:bg-accent-glow transition">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
