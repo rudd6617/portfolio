@@ -210,21 +210,39 @@
   background: var(--accent);
 }
 
-/* ---------- Nav rail active marker ---------- */
-/* main.js toggles .text-accent on the active link; the marker reserves a
-   fixed width so links don't shift as the active section changes. */
-#navMenu a::before {
-  content: '▸';
-  display: inline-block;
-  width: 1em;
-  margin-right: 0.25rem;
-  color: var(--accent);
-  opacity: 0;
-  transition: opacity 0.2s;
+/* ---------- Nav rail ---------- */
+/* main.js toggles .text-accent on the active link. */
+
+/* Mobile: dots. Colour follows the link (zinc → accent on active/hover),
+   and the active dot scales up. */
+#navMenu .nav-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background: currentColor;
+  transition: transform 0.2s;
 }
 
-#navMenu a.text-accent::before {
-  opacity: 1;
+#navMenu a.text-accent .nav-dot {
+  transform: scale(1.4);
+}
+
+/* Desktop: a caret before the active label. Width is reserved so the
+   labels don't shift as the active section changes. */
+@media (min-width: 640px) {
+  #navMenu .nav-label::before {
+    content: '▸';
+    display: inline-block;
+    width: 1em;
+    margin-right: 0.25rem;
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  #navMenu a.text-accent .nav-label::before {
+    opacity: 1;
+  }
 }
 
 /* ---------- Smooth scrolling ---------- */

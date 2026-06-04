@@ -37,17 +37,3 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.08 }
 );
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// Mobile nav: toggle the dropdown, and collapse it after navigating.
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
-navToggle.addEventListener('click', () => {
-  const open = navMenu.classList.toggle('hidden') === false;
-  navToggle.setAttribute('aria-expanded', String(open));
-});
-navMenu.querySelectorAll('a').forEach(link =>
-  link.addEventListener('click', () => {
-    navMenu.classList.add('hidden');
-    navToggle.setAttribute('aria-expanded', 'false');
-  })
-);
