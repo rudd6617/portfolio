@@ -1,5 +1,5 @@
 // Active nav link follows the section nearest the viewport top.
-const navLinks = document.querySelectorAll('nav a[href^="#"]');
+const navLinks = document.querySelectorAll('#navMenu a[href^="#"]');
 
 let activeId = null;
 function setActive(id) {

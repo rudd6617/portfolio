@@ -210,6 +210,23 @@
   background: var(--accent);
 }
 
+/* ---------- Nav rail active marker ---------- */
+/* main.js toggles .text-accent on the active link; the marker reserves a
+   fixed width so links don't shift as the active section changes. */
+#navMenu a::before {
+  content: '▸';
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.25rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+#navMenu a.text-accent::before {
+  opacity: 1;
+}
+
 /* ---------- Smooth scrolling ---------- */
 html {
   scroll-behavior: smooth;
