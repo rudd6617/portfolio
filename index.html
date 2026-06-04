@@ -6,44 +6,42 @@
   <title>Rudolf Chen | Senior Backend Engineer</title>
   <meta name="description" content="陳麒方 Rudolf Chen — Senior Backend Engineer with 10 years of experience. Python, distributed systems, RAG / LLM integration." />
   <meta name="author" content="Rudolf Chen" />
+  <meta name="theme-color" content="#0a0c10" />
+  <link rel="canonical" href="https://rudd6617.github.io/portfolio/" />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
 
   <meta property="og:title" content="Rudolf Chen | Senior Backend Engineer" />
   <meta property="og:description" content="10 年後端開發經驗，專注 Python、分散式系統、AI/RAG 整合。" />
   <meta property="og:type" content="website" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rudolf Chen",
+    "alternateName": "陳麒方",
+    "jobTitle": "Senior Backend Engineer",
+    "url": "https://rudd6617.github.io/portfolio/",
+    "email": "rudd6617@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Taipei",
+      "addressCountry": "TW"
+    },
+    "sameAs": ["https://github.com/rudd6617"],
+    "knowsAbout": ["Python", "FastAPI", "Django", "Distributed Systems", "RAG", "LLM", "Docker"]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'Noto Sans TC', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
-          },
-          colors: {
-            ink: {
-              900: '#0a0c10',
-              800: '#0f1218',
-              700: '#161a22',
-              600: '#1d2230',
-              500: '#2a3142',
-            },
-            accent: {
-              DEFAULT: '#5eead4',
-              dim: '#2dd4bf',
-              glow: '#99f6e4',
-            },
-          },
-        },
-      },
-    };
-  </script>
-
+  <link rel="stylesheet" href="./assets/tailwind.css" />
   <link rel="stylesheet" href="./assets/style.css" />
+
+  <!-- Reveal sections stay visible if JS is off; only hidden once JS confirms it can reveal them. -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body class="bg-ink-900 text-zinc-200 font-sans antialiased selection:bg-accent/30 selection:text-accent-glow">
@@ -54,12 +52,17 @@
   <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-ink-900/70 border-b border-white/5">
     <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
       <a href="#top" class="font-mono text-sm text-accent hover:text-accent-glow transition">rudolf.chen()</a>
-      <div class="hidden sm:flex items-center gap-6 text-sm text-zinc-400">
-        <a href="#about" class="hover:text-accent transition">About</a>
-        <a href="#experience" class="hover:text-accent transition">Experience</a>
-        <a href="#projects" class="hover:text-accent transition">Projects</a>
-        <a href="#skills" class="hover:text-accent transition">Skills</a>
-        <a href="#contact" class="hover:text-accent transition">Contact</a>
+
+      <button id="navToggle" type="button" class="sm:hidden text-zinc-400 hover:text-accent transition" aria-label="開啟選單" aria-expanded="false" aria-controls="navMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <div id="navMenu" class="hidden sm:flex sm:items-center sm:gap-6 absolute top-14 inset-x-0 sm:static flex-col bg-ink-900/95 sm:bg-transparent border-b sm:border-0 border-white/5 px-6 py-4 sm:p-0 text-sm text-zinc-400">
+        <a href="#about" class="block py-2 sm:py-0 hover:text-accent transition">About</a>
+        <a href="#experience" class="block py-2 sm:py-0 hover:text-accent transition">Experience</a>
+        <a href="#projects" class="block py-2 sm:py-0 hover:text-accent transition">Projects</a>
+        <a href="#skills" class="block py-2 sm:py-0 hover:text-accent transition">Skills</a>
+        <a href="#contact" class="block py-2 sm:py-0 hover:text-accent transition">Contact</a>
       </div>
     </div>
   </nav>

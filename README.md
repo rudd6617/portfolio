@@ -6,10 +6,10 @@
 
 ## Stack
 
-- 純靜態 HTML + CSS + vanilla JS（零 build step）
-- TailwindCSS via CDN
+- 純靜態 HTML + CSS + vanilla JS
+- TailwindCSS 3 **預編譯**為靜態 `assets/tailwind.css`（非 CDN runtime，零瀏覽器端編譯）
 - Google Fonts：Inter / JetBrains Mono / Noto Sans TC
-- GitHub Actions → GitHub Pages 自動部署
+- GitHub Actions → GitHub Pages 自動部署（部署本身仍純靜態，無 build step）
 
 ## 結構
 
@@ -18,10 +18,24 @@
 ├── index.html              # 單頁作品集
 ├── assets/
 │   ├── style.css           # 自訂樣式（exp / project / skill 卡片、動畫）
-│   └── main.js             # nav scroll spy + reveal-on-scroll
+│   ├── tailwind.css        # Tailwind 編譯產物（提交進 repo）
+│   ├── main.js             # nav scroll spy + reveal + 手機選單
+│   └── favicon.svg
+├── src/tailwind.css        # Tailwind 編譯來源
+├── tailwind.config.js      # 主題色票 / 字體 / content 掃描
+├── package.json            # 建置工具（tailwindcss devDependency）
 ├── .github/workflows/
 │   └── deploy.yml          # Pages 自動部署
 └── .nojekyll               # 跳過 Jekyll 處理
+```
+
+## 樣式重新編譯
+
+改動 `index.html` 若新增/移除 Tailwind class，需重新編譯並提交產物：
+
+```bash
+npm install        # 首次：安裝 tailwindcss
+npm run build:css  # 重新產生 assets/tailwind.css
 ```
 
 ## 本機預覽
